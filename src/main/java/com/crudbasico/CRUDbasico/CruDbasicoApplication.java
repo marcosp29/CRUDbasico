@@ -10,7 +10,7 @@ import com.crudbasico.service.UsuarioService;
 
 @SpringBootApplication
 @RestController
-@ComponentScan("com.crudbasico.service")
+@ComponentScan("com.crudbasico.")
 public class CruDbasicoApplication {
 
 	public static void main(String[] args) {
