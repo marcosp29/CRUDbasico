@@ -1,6 +1,9 @@
 package com.crudbasico.web.api;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -10,7 +13,7 @@ import com.crudbasico.domain.Usuario;
 import com.crudbasico.service.UsuarioService;
 
 @RestController
-@RequestMapping("/usuario")
+@RequestMapping("/usuarios")
 public class UsuarioController {
 	
 	@Autowired
@@ -26,6 +29,12 @@ public class UsuarioController {
 		}else {
 			return us.registraUsuarioDefault(email, senha);
 		}
+	}
+	
+	@GetMapping
+	public List<Usuario> usuarios(){
+			List<Usuario> usuarios = us.findAll();
+			return usuarios;
 	}
 
 }
