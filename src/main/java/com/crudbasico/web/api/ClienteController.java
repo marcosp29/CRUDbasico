@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,19 +15,20 @@ import com.crudbasico.domain.Endereco;
 import com.crudbasico.service.ClienteService;
 
 @RestController
+@RequestMapping("/clientes")
 public class ClienteController {
 	
 	@Autowired
 	private ClienteService cs;
 	
 	@PostMapping
-	Cliente registraNovoCliente(
+	Cliente registraNovoCliente( 
 			@RequestParam(required = true) String nome, 
 			@RequestParam(required = true) Integer cpf,
 			@RequestParam(required = true) Endereco endereco,
 			@RequestParam(required = true) Integer telefoneCelular, 
 			@RequestParam(required = true) String email){
-		
+			
 		return cs.registraCliente(nome, cpf, endereco, null, null, telefoneCelular, email);
 		
 	}

@@ -14,13 +14,13 @@ public class UsuarioService {
 	@Autowired
 	private UsuarioRepository repo;
 	
-	@Autowired
-	private PasswordEncoder passwordEncoder;
+//	@Autowired
+//	private PasswordEncoder passwordEncoder;
 	
 	public Usuario registraUsuarioDefault(String email, String senha) {
 		Usuario usuario = new Usuario();
 		usuario.setEmail(email);
-		usuario.setSenha(passwordEncoder.encode(senha));
+		usuario.setSenha((senha));
 		usuario.setRole(UsuarioRole.ROLE_DEFAULT);
 		
 //		if (repo.findByEmail(usuario.getEmail()).isPresent())
@@ -33,7 +33,7 @@ public class UsuarioService {
 	public Usuario registraUsuarioAdmin(String email, String senha) {
 		Usuario usuario = new Usuario();
 		usuario.setEmail(email);
-		usuario.setSenha(passwordEncoder.encode(senha));
+		usuario.setSenha((senha));
 		usuario.setRole(UsuarioRole.ROLE_ADMIN);
 		
 //		if (repo.findByEmail(usuario.getEmail()).isPresent())
