@@ -1,4 +1,4 @@
-package com.crudbasico.CRUDbasico;
+package com.crudbasico;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,15 +10,15 @@ import com.crudbasico.service.UsuarioService;
 
 @SpringBootApplication
 @RestController
-@ComponentScan("com.crudbasico.service")
-public class CruDbasicoApplication {
+//@ComponentScan("com.crudbasico.service")
+public class CrudBasicoApplication {
 
 	public static void main(String[] args) {
-		ConfigurableApplicationContext context = SpringApplication.run(CruDbasicoApplication.class, args);
+		ConfigurableApplicationContext context = SpringApplication.run(CrudBasicoApplication.class, args);
 		
 		UsuarioService usuService = context.getBean(UsuarioService.class);
 		usuService.registraUsuarioAdmin("admin@crudbasico.com", "123456");
 		usuService.registraUsuarioDefault("user@crudbasico.com", "123456");
 	}
-
+	
 }
