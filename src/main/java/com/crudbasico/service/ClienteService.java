@@ -15,7 +15,6 @@ public class ClienteService {
 	@Autowired
 	private ClienteRepository repo;
 	
-	
 	public Cliente registraCliente (String nome, Integer cpf, Endereco endereco,
 			Integer telefoneResidencial, Integer telefoneComercial,
 			Integer telefoneCelular, String email) {
